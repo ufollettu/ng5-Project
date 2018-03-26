@@ -6,9 +6,9 @@
     </div>
 
     <div class="navbar-default">
-      <ul class="nav navbar-nav">
-        <li><a href="#">Recipes</a></li>
-        <li><a href="#">Shopping List</a></li>
+      <ul class="nav navbar-nav" #topMenu>
+        <li><a href="#" (click)="onSelect('recipe')">Recipes</a></li> <!--pass an event to switch views-->
+        <li><a href="#" (click)="onSelect('shopping-list')">Shopping List</a></li> <!--pass an event to switch views-->
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown">
