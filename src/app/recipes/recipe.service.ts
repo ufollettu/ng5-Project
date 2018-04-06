@@ -40,6 +40,10 @@ export class RecipeService {
     return this.recipes.slice(); // duplicate the original array
   }
 
+  getRecipe(index: number) {
+    return this.recipes[index]; // find recipe by id
+  }
+
   addIngrsToShList(ingredients: Ingredient[]) {
     this.slService.addIngredients(ingredients);
   }
