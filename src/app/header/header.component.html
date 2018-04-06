@@ -7,8 +7,8 @@
 
     <div class="navbar-default">
       <ul class="nav navbar-nav" #topMenu>
-        <li><a href="#" (click)="onSelect('recipe')">Recipes</a></li> <!--pass an event to switch views-->
-        <li><a href="#" (click)="onSelect('shopping-list')">Shopping List</a></li> <!--pass an event to switch views-->
+        <li routerLinkActive="active"><a routerLink="/recipes">Recipes</a></li> <!--pass an event to switch views-->
+        <li routerLinkActive="active"><a routerLink="/shopping-list">Shopping List</a></li> <!--pass an event to switch views-->
       </ul>
       <ul class="nav navbar-nav navbar-right">
         <li class="dropdown" appDropdown>

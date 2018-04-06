@@ -25,13 +25,13 @@ export class ShoppingListService {
   addIngredients(ingredients: Ingredient[]) {
 
     let exist: boolean = false;
-    let that = this;
+    // let that = this;
     // debugger;
-    // console.log(this.ingredients);
-    ingredients.forEach(function(newIngr, newKey) {
+    console.log(this.ingredients);
+    ingredients.forEach((newIngr, newKey) => {
       exist = false;
       // console.log(newIngr);
-      that.ingredients.forEach(function (ingr, key) {
+      this.ingredients.forEach((ingr, key) => {
         if(ingr["name"] == newIngr["name"]) {
           ingr["amount"] += newIngr["amount"];
           exist = true;
@@ -39,14 +39,12 @@ export class ShoppingListService {
       });
 
       if(!exist) {
-        that.ingredients.push(newIngr);
+        this.ingredients.push(newIngr);
       }
-      that.ingredientsChanged.emit(that.ingredients.slice());
+      // that.ingredientsChanged.emit(that.ingredients.slice());
     });
 
-
-
     // this.ingredients.push(...ingredients); // spread operator
-    // this.ingredientsChanged.emit(this.ingredients.slice()); // return a copy of the array
+    this.ingredientsChanged.emit(this.ingredients.slice()); // return a copy of the array
   }
 }
