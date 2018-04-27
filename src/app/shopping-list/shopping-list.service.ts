@@ -29,11 +29,10 @@ export class ShoppingListService {
   }
 
   addIngredients(ingredients: Ingredient[]) {
-
     let exist: boolean = false;
     // let that = this;
     // debugger;
-    console.log(this.ingredients);
+    // console.log(this.ingredients);
     ingredients.forEach((newIngr, newKey) => {
       exist = false;
       // console.log(newIngr);
@@ -51,6 +50,11 @@ export class ShoppingListService {
     });
 
     // this.ingredients.push(...ingredients); // spread operator
+    this.ingredientsChanged.next(this.ingredients.slice()); // return a copy of the array
+  }
+
+  updateIngredient(index: number, newIngredient: Ingredient) {
+    this.ingredients[index] = newIngredient;
     this.ingredientsChanged.next(this.ingredients.slice()); // return a copy of the array
   }
 }
