@@ -29,27 +29,27 @@ export class ShoppingListService {
   }
 
   addIngredients(ingredients: Ingredient[]) {
-    let exist: boolean = false;
-    // let that = this;
-    // debugger;
-    // console.log(this.ingredients);
-    ingredients.forEach((newIngr, newKey) => {
-      exist = false;
-      // console.log(newIngr);
-      this.ingredients.forEach((ingr, key) => {
-        if(ingr["name"] == newIngr["name"]) {
-          ingr["amount"] += newIngr["amount"];
-          exist = true;
-        }
-      });
+    // let exist: boolean = false;
+    // // let that = this;
+    // // debugger;
+    // // console.log(this.ingredients);
+    // ingredients.forEach((newIngr, newKey) => {
+    //   exist = false;
+    //   // console.log(newIngr);
+    //   this.ingredients.forEach((ingr, key) => {
+    //     if(ingr["name"] == newIngr["name"]) {
+    //       ingr["amount"] += newIngr["amount"];
+    //       exist = true;
+    //     }
+    //   });
+    //
+    //   if(!exist) {
+    //     this.ingredients.push(newIngr);
+    //   }
+    //   // that.ingredientsChanged.emit(that.ingredients.slice());
+    // });
 
-      if(!exist) {
-        this.ingredients.push(newIngr);
-      }
-      // that.ingredientsChanged.emit(that.ingredients.slice());
-    });
-
-    // this.ingredients.push(...ingredients); // spread operator
+    this.ingredients.push(...ingredients); // spread operator
     this.ingredientsChanged.next(this.ingredients.slice()); // return a copy of the array
   }
 

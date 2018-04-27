@@ -42,7 +42,7 @@ import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.compon
     HttpModule,
     AppRoutingModule
   ],
-  providers: [ShoppingListService],
+  providers: [ShoppingListService, RecipeService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
