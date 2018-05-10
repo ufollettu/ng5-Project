@@ -10,6 +10,7 @@ import {ErrorPageComponent} from "./error-page/error-page.component";
 import {RecipeStartComponent} from "./recipes/recipe-start/recipe-start.component";
 import {RecipeDetailComponent} from "./recipes/recipe-detail/recipe-detail.component";
 import {SignupComponent} from "./auth/signup/signup.component";
+import {SigninComponent} from "./auth/signin/signin.component";
 
 
 const appRoutes: Routes = [
@@ -23,9 +24,11 @@ const appRoutes: Routes = [
     { path: ':id', component: RecipeDetailComponent},
     { path: ':id/edit', component: RecipeEditComponent},
   ]},
+  // Authentication
+  { path: 'signup', component: SignupComponent},
+  { path: 'signin', component: SigninComponent},
   // { path: 'not-found', component: PageNotFoundComponent },
   { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
-  { path: 'signup', component: SignupComponent},
   { path: '**', redirectTo: '/not-found' }
 ];
 
