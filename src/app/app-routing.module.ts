@@ -9,6 +9,7 @@ import {RecipeEditComponent} from "./recipes/recipe-edit/recipe-edit.component";
 import {ErrorPageComponent} from "./error-page/error-page.component";
 import {RecipeStartComponent} from "./recipes/recipe-start/recipe-start.component";
 import {RecipeDetailComponent} from "./recipes/recipe-detail/recipe-detail.component";
+import {SignupComponent} from "./auth/signup/signup.component";
 
 
 const appRoutes: Routes = [
@@ -24,6 +25,7 @@ const appRoutes: Routes = [
   ]},
   // { path: 'not-found', component: PageNotFoundComponent },
   { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
+  { path: 'signup', component: SignupComponent},
   { path: '**', redirectTo: '/not-found' }
 ];
 

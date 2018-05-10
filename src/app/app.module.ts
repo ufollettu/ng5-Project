@@ -19,6 +19,8 @@ import {AppRoutingModule} from "./app-routing.module";
 import {HttpModule} from "@angular/http";
 import { RecipeStartComponent } from './recipes/recipe-start/recipe-start.component';
 import {DataStorageService} from "./shared/data-storage.service";
+import { SignupComponent } from './auth/signup/signup.component';
+import { SigninComponent } from './auth/signin/signin.component';
 
 
 @NgModule({
@@ -35,6 +37,8 @@ import {DataStorageService} from "./shared/data-storage.service";
     ErrorPageComponent,
     RecipeEditComponent,
     RecipeStartComponent,
+    SignupComponent,
+    SigninComponent,
   ],
   imports: [
     BrowserModule,
