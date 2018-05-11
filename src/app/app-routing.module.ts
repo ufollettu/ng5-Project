@@ -1,14 +1,11 @@
-import { NgModule } from '@angular/core';
-import { Routes, RouterModule } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {Routes, RouterModule} from '@angular/router';
 
-import {AppComponent} from "./app.component";
-import {ErrorPageComponent} from "./error-page/error-page.component";
-
+import {HomeComponent} from "./core/home/home.component";
 
 const appRoutes: Routes = [
-  { path: '', redirectTo: '/recipes', pathMatch: 'full'},
-  { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
-  // { path: '**', redirectTo: '/not-found' }
+  {path: '', component: HomeComponent},
+  {path: 'recipes', loadChildren: './recipes/recipes.module#RecipesModule'}
 ];
 
 @NgModule({
