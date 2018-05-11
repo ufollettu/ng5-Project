@@ -12,9 +12,7 @@ const recipesRoutes: Routes = [
     { path: 'new', component: RecipeEditComponent, canActivate: [AuthGuardService]}, // order of path are important to resolve them
     { path: ':id', component: RecipeDetailComponent},
     { path: ':id/edit', component: RecipeEditComponent, canActivate: [AuthGuardService]},
-  ]},
-  // { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
-  // { path: '**', redirectTo: '/not-found' }
+  ]}
 ];
 
 @NgModule({

@@ -1,42 +1,38 @@
 import {BrowserModule} from '@angular/platform-browser';
-import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {HttpModule} from "@angular/http";
 import {NgModule} from '@angular/core';
 
 import {AppComponent} from './app.component';
-import {ShoppingListComponent} from './shopping-list/shopping-list.component';
-import {ShoppingListEditComponent} from './shopping-list/shopping-list-edit/shopping-list-edit.component';
-import {HeaderComponent} from './header/header.component';
+import {HeaderComponent} from "./header/header.component";
+import {ErrorPageComponent} from './error-page/error-page.component';
+
 import {RecipeService} from "./recipes/recipe.service";
 import {ShoppingListService} from "./shopping-list/shopping-list.service";
-import {ErrorPageComponent} from './error-page/error-page.component';
-import {AppRoutingModule} from "./app-routing.module";
 import {DataStorageService} from "./shared/data-storage.service";
-import {SignupComponent} from './auth/signup/signup.component';
-import {SigninComponent} from './auth/signin/signin.component';
 import {AuthService} from "./auth/auth.service";
-import {AuthGuardService} from "./auth/auth-guard.service";
+
+import {AppRoutingModule} from "./app-routing.module";
+import {SharedModule} from "./shared/shared.module";
+import {AuthModule} from "./auth/auth.module";
 import {RecipesModule} from "./recipes/recipes.module";
-import {DropdownDirective} from "./shared/dropdown.directive";
+import {ShoppingListModule} from "./shopping-list/shopping-list.module";
+import {AuthGuardService} from "./auth/auth-guard.service";
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    ShoppingListComponent,
-    ShoppingListEditComponent,
     HeaderComponent,
-    ErrorPageComponent,
-    SignupComponent,
-    SigninComponent,
-    DropdownDirective
+    ErrorPageComponent
   ],
   imports: [
     BrowserModule,
-    FormsModule,
     HttpModule,
     AppRoutingModule,
-    RecipesModule
+    AuthModule,
+    RecipesModule,
+    ShoppingListModule,
+    SharedModule
   ],
   providers: [
     ShoppingListService,
