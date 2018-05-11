@@ -4,34 +4,24 @@ import { Routes, RouterModule } from '@angular/router';
 import {AppComponent} from "./app.component";
 import {ShoppingListComponent} from "./shopping-list/shopping-list.component";
 import {ShoppingListEditComponent} from "./shopping-list/shopping-list-edit/shopping-list-edit.component";
-import {RecipesComponent} from "./recipes/recipes.component";
-import {RecipeEditComponent} from "./recipes/recipe-edit/recipe-edit.component";
 import {ErrorPageComponent} from "./error-page/error-page.component";
-import {RecipeStartComponent} from "./recipes/recipe-start/recipe-start.component";
-import {RecipeDetailComponent} from "./recipes/recipe-detail/recipe-detail.component";
 import {SignupComponent} from "./auth/signup/signup.component";
 import {SigninComponent} from "./auth/signin/signin.component";
-import {AuthGuard} from "../../../routing-final/src/app/auth-guard.service";
-import {AuthGuardService} from "./auth/auth-guard.service";
 
 
 const appRoutes: Routes = [
   { path: '', redirectTo: '/recipes', pathMatch: 'full'},
+  // shopping list
   { path: 'shopping-list', component: ShoppingListComponent, children: [
     { path: 'edit', component: ShoppingListEditComponent}
   ]},
-  { path: 'recipes', component: RecipesComponent, children: [
-    { path: '', component: RecipeStartComponent},
-    { path: 'new', component: RecipeEditComponent, canActivate: [AuthGuardService]}, // order of path are important to resolve them
-    { path: ':id', component: RecipeDetailComponent},
-    { path: ':id/edit', component: RecipeEditComponent, canActivate: [AuthGuardService]},
-  ]},
+
   // Authentication
   { path: 'signup', component: SignupComponent},
   { path: 'signin', component: SigninComponent},
   // { path: 'not-found', component: PageNotFoundComponent },
-  { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
-  { path: '**', redirectTo: '/not-found' }
+  // { path: 'not-found', component: ErrorPageComponent, data: {message: 'Page not found!'} },
+  // { path: '**', redirectTo: '/not-found' }
 ];
 
 @NgModule({
