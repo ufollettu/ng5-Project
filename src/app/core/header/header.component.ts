@@ -20,7 +20,7 @@ export class HeaderComponent implements OnInit {
   // onSelect(feature: string) {
   //   this.featureSelected.emit(feature) // set an event to export to appComponent
   // }
-
+  //
   // isCollapsed: boolean = false;
   //
   // collapsed(event: any): void {
@@ -45,5 +45,9 @@ export class HeaderComponent implements OnInit {
 
   onLogout() {
     this.authService.logout();
+  }
+
+  isAuthenticated() {
+    return this.authService.isAuthenticated();
   }
 }
